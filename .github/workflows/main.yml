@@ -10,6 +10,3 @@ jobs:
         uses: datopian/harvesting-via-actions@v1.2
         with:
           url-to-harvest: 'https://pkgstore.datahub.io/core/finance-vix/978/datapackage.json'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
