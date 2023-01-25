@@ -7,7 +7,7 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: datopian/harvesting-via-actions@1.0.0
+        uses: datopian/harvesting-via-actions@1.0
         with:
           who-to-greet: 'TEST'
       # Use the output from the `hello` step
