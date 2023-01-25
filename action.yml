@@ -1,10 +1,10 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  url-to-harvest:  # id of input
+    description: 'What to harvest'
     required: true
-    default: 'World'
+    default: 'https://pkgstore.datahub.io/core/finance-vix/978/datapackage.json'
 outputs:
   time: # id of output
     description: 'The time we greeted you'
