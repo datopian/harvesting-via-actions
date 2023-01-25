@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const { Client } = require('ckanClient');
+const { Client } = require('ckan-client');
 
 try {
   // `who-to-greet` input defined in action metadata file
@@ -11,11 +11,8 @@ try {
   const client = new Client('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmbUgwRDlZMWlRSXVEdDBnMjg5UDgwenVRejYyYkRXdF9PeFRaSjM4eGxlYlJpbm5HclhYcTFwZndQbzE0Y3lETmM3ZThkaGhzLUtwUUcwVCIsImlhdCI6MTY3NDYzNDQ5OH0.qCcRh2GMouvnL5t6d_0Ya1Fw2uH09oc8RkrCSCo9bBk', '', '', 'https://ckan.x.demo.datopian.com')
   client.create({
     name: 'test',
+    owner_org: 'test'
   }).then(console.log)
-  console.log(dataset)
-  // Get the JSON webhook payload for the event that triggered the workflow
-  //   const payload = JSON.stringify(github.context.payload, undefined, 2)
-  //   console.log(`The event payload: ${payload}`);
 } catch (error) {
   core.setFailed(error.message);
 }
