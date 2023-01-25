@@ -12,7 +12,12 @@ jobs:
         uses: actions/checkout@v3
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
-        run: |
-          ls ${{ github.workspace }}
+      - name: Web Request Action
+        uses: Satak/webrequest-action@v1.2.3
+        with:
+          url: https://pkgstore.datahub.io/core/finance-vix/978/datapackage.json
+          method: GET
+          run: |
+              $output = '${{ steps.webhook.outputs.output }}' | ConvertFrom-Json
+              Write-Host "Time from output $($output.time) statusCode $($output.statusCode) data $($output.data)"
       - run: echo "🍏 This job's status is ${{ job.status }}."
