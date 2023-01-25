@@ -7,6 +7,6 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: datopian/harvesting-via-actions@v1.2
+        uses: datopian/harvesting-via-actions@v1.3
         with:
           url-to-harvest: 'https://pkgstore.datahub.io/core/finance-vix/978/datapackage.json'
