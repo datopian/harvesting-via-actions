@@ -9,9 +9,9 @@ try {
   const time = (new Date()).toTimeString();
   core.setOutput("time", time);
   const client = new Client('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmbUgwRDlZMWlRSXVEdDBnMjg5UDgwenVRejYyYkRXdF9PeFRaSjM4eGxlYlJpbm5HclhYcTFwZndQbzE0Y3lETmM3ZThkaGhzLUtwUUcwVCIsImlhdCI6MTY3NDYzNDQ5OH0.qCcRh2GMouvnL5t6d_0Ya1Fw2uH09oc8RkrCSCo9bBk', '', '', 'https://ckan.x.demo.datopian.com')
-  const dataset = await client.create({
+  client.create({
     name: 'test',
-  })
+  }).then(console.log)
   console.log(dataset)
   // Get the JSON webhook payload for the event that triggered the workflow
   //   const payload = JSON.stringify(github.context.payload, undefined, 2)
